@@ -14,6 +14,8 @@ Client → Controller → Service → Redis → PostgreSQL
 * Redis used as cache (cache-aside pattern)
 * PostgreSQL used for persistent storage
 
+![System Architecture](https://github.com/SyntaxNova/url-shortener/blob/main/assets/SystemArchitecture.png)
+
 ---
 
 ## ⚡ Features
@@ -86,15 +88,24 @@ ttl 'shortCode'
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots & Demo
 
-### 🔹 API Request (Postman)
+### 🔹 Working 
 
-![Postman](assets/postman.png)
+![assets/redirect.png](https://github.com/SyntaxNova/url-shortener/blob/main/assets/working.png)
+
+### 🔹 Postgres
+
+![Postman](https://github.com/SyntaxNova/url-shortener/blob/main/assets/postgresDB.png)
+
+### 🔹 API Request (Postman) 
+
+![Postgres](https://github.com/SyntaxNova/url-shortener/blob/main/assets/postman%20(2).png)
 
 ### 🔹 Redirect in Browser
 
-![Redirect](assets/redirect.png)
+![assets/redirect.png](https://github.com/SyntaxNova/url-shortener/blob/main/assets/BeforeRedirect.png)
+![assets/redirect.png](https://github.com/SyntaxNova/url-shortener/blob/main/assets/AfterRedirect.png)
 
 ### 🔹 Redis Cache & TTL Verification
 
@@ -109,3 +120,20 @@ ttl 'shortCode'
 * Distributed ID generation
 
 ---
+
+## 👨‍💻 Author
+
+**Atharva Pachpute**
+
+* 🎓 BE Information Technology (SPPU)
+* 💻 Software Engineer
+* 📍 Pune, India
+
+### 🔗 Connect with me
+
+* GitHub: https://github.com/SyntaxNova
+* LinkedIn: https://www.linkedin.com/in/atharva-pachpute3/
+* Email: [atharvacodes@gmail.com](mailto:atharvacodes@gmail.com)
+
+---
+
