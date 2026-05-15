@@ -29,7 +29,7 @@ https://url-shortener-2x3u.onrender.com
 
 # 🧠 System Architecture
 
-![System Architecture](assets/system-architecture.png)
+![System Architecture](assets/SystemDesign.png)
 
 ---
 
@@ -105,25 +105,31 @@ https://url-shortener-2x3u.onrender.com/a1B
 
 ## 🔹 Frontend UI
 
-![Frontend UI](assets/frontend-ui.png)
+![Frontend UI](assets/LiveFrontend.png)
 
 ---
 
 ## 🔹 Postman Testing
 
-![Postman Testing](assets/postman-test.png)
+![Postman Testing](assets/postmanTesting.png)
 
 ---
 
 ## 🔹 Redis Cache Verification
 
-![Redis Cache](assets/redis-cache.png)
+![Redis Cache](assets/RedisCache.png)
 
 ---
 
 ## 🔹 PostgreSQL Database
 
-![PostgreSQL Database](assets/postgres-db.png)
+![PostgreSQL Database](assets/postgresDB.png)
+
+---
+
+## 🔹Render Deployment
+
+![PostgreSQL Database](assets/RenderDeployement.png)
 
 ---
 
