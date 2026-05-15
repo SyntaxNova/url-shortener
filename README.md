@@ -1,139 +1,230 @@
-# 🔗 URL Shortener (Spring Boot + Redis)
+# 🚀 URL Shortener System
 
-## 🚀 Overview
-
-A scalable URL shortener built using Spring Boot that converts long URLs into compact short links using Base62 encoding.
-It uses Redis caching with TTL to improve performance and reduce database load.
+A scalable full-stack URL Shortener built using Spring Boot, PostgreSQL, Redis, React, and cloud deployment platforms like Render and Vercel.
 
 ---
 
-## 🧠 Architecture
+# 🌐 Live Demo
 
-Client → Controller → Service → Redis → PostgreSQL
+## Frontend
+https://urlshortner-gold-seven.vercel.app/
 
-* Redis used as cache (cache-aside pattern)
-* PostgreSQL used for persistent storage
-
-![System Architecture](https://github.com/SyntaxNova/url-shortener/blob/main/assets/SystemArchitecture.png)
-
----
-
-## ⚡ Features
-
-* 🔗 Shorten long URLs
-* 🔄 Redirect to original URL
-* ⚡ Redis caching for fast access
-* ⏳ TTL (Time-To-Live) for cache expiry
-* 📊 Click tracking (analytics)
+## Backend API
+https://url-shortener-2x3u.onrender.com
 
 ---
 
-## 🛠️ Tech Stack
+# 📌 Features
 
-* Java 17
-* Spring Boot
-* PostgreSQL
-* Redis (Memurai)
-* Maven
+- 🔗 Convert long URLs into short URLs
+- ⚡ Fast redirection using Redis caching
+- ⏳ TTL-based cache expiry
+- 📊 Click tracking
+- 🌐 Full-stack deployment
+- ☁️ Cloud-hosted backend & frontend
+- 🛢️ Persistent PostgreSQL storage
+- 🚀 REST API architecture
 
 ---
 
-## 📡 API Endpoints
+# 🧠 System Architecture
 
-### 🔹 Shorten URL
+![System Architecture](assets/system-architecture.png)
 
-POST /shorten
+---
 
-Body:
-https://google.com
+# ⚙️ Tech Stack
 
-Response:
+| Technology | Usage |
+|---|---|
+| Java 17 | Backend Development |
+| Spring Boot | REST API |
+| PostgreSQL | Persistent Database |
+| Redis | Caching Layer |
+| React.js | Frontend |
+| Vite | Frontend Build Tool |
+| Maven | Dependency Management |
+| Docker | Containerization |
+| Render | Backend Deployment |
+| Vercel | Frontend Deployment |
+
+---
+
+# 🔄 Application Flow
+
+1. User submits long URL
+2. Backend generates Base62 short code
+3. URL stored in PostgreSQL
+4. URL cached in Redis with TTL
+5. User accesses short URL
+6. System first checks Redis
+7. If cache miss → fetch from PostgreSQL
+8. Redirect user to original URL
+
+---
+
+# 📡 API Endpoints
+
+## 🔹 Shorten URL
+
+### Request
+
+## Request Body
+
+```json
+{
+  "longUrl": "https://google.com"
+}
+```
+
+---
+
+## Response
+
+```json
 a1B
+```
 
 ---
 
-### 🔹 Redirect
+# 🔹 Redirect URL
 
+```http
 GET /{shortCode}
+```
 
-Example:
-http://localhost:8080/a1B
+### Example
 
----
-
-## 🧪 How to Run
-
-1. Start PostgreSQL
-2. Start Redis (Memurai)
-3. Run Spring Boot app
-4. Use Postman to test APIs
+```http
+https://url-shortener-2x3u.onrender.com/a1B
+```
 
 ---
 
-## 🔍 Redis Verification
+# 📸 Screenshots
 
-memurai-cli
-keys *
-get 'shortCode'
-ttl 'shortCode'
+## 🔹 Frontend UI
 
----
-
-## 💡 Key Concepts Used
-
-* Base62 Encoding
-* Cache-Aside Pattern
-* TTL-based Cache Expiry
-* REST API Design
+![Frontend UI](assets/frontend-ui.png)
 
 ---
 
-## 📸 Screenshots & Demo
+## 🔹 Postman Testing
 
-### 🔹 Working 
-
-![assets/redirect.png](https://github.com/SyntaxNova/url-shortener/blob/main/assets/working.png)
-
-### 🔹 Postgres
-
-![Postman](https://github.com/SyntaxNova/url-shortener/blob/main/assets/postgresDB.png)
-
-### 🔹 API Request (Postman) 
-
-![Postgres](https://github.com/SyntaxNova/url-shortener/blob/main/assets/postman%20(2).png)
-
-### 🔹 Redirect in Browser
-
-![assets/redirect.png](https://github.com/SyntaxNova/url-shortener/blob/main/assets/BeforeRedirect.png)
-![assets/redirect.png](https://github.com/SyntaxNova/url-shortener/blob/main/assets/AfterRedirect.png)
-
-### 🔹 Redis Cache & TTL Verification
-
-![Redis](assets/redis.png)
-
-
-## 📌 Future Improvements
-
-* Custom alias support
-* Link expiration
-* Rate limiting
-* Distributed ID generation
+![Postman Testing](assets/postman-test.png)
 
 ---
 
-## 👨‍💻 Author
+## 🔹 Redis Cache Verification
 
-**Atharva Pachpute**
-
-* 🎓 BE Information Technology (SPPU)
-* 💻 Software Engineer
-* 📍 Pune, India
-
-### 🔗 Connect with me
-
-* GitHub: https://github.com/SyntaxNova
-* LinkedIn: https://www.linkedin.com/in/atharva-pachpute3/
-* Email: [atharvacodes@gmail.com](mailto:atharvacodes@gmail.com)
+![Redis Cache](assets/redis-cache.png)
 
 ---
 
+## 🔹 PostgreSQL Database
+
+![PostgreSQL Database](assets/postgres-db.png)
+
+---
+
+# 🧪 Local Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/SyntaxNova/url-shortener.git
+```
+
+---
+
+# Backend Setup
+
+```bash
+cd url-shortener
+```
+
+## Configure PostgreSQL
+
+Update:
+
+```properties
+application.properties
+```
+
+---
+
+## Run Application
+
+```bash
+./mvnw spring-boot:run
+```
+
+---
+
+# Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+# ☁️ Deployment
+
+| Service | Platform |
+|---|---|
+| Backend | Render |
+| Frontend | Vercel |
+| Database | Render PostgreSQL |
+| Cache | Upstash Redis |
+
+---
+
+# 💡 Concepts Used
+
+- Base62 Encoding
+- REST APIs
+- Cache-Aside Pattern
+- Redis TTL
+- Docker Deployment
+- Full-Stack Deployment
+- Cloud Hosting
+- MVC Architecture
+
+---
+
+# 📌 Future Improvements
+
+- Custom aliases
+- QR code generation
+- Link expiration
+- Analytics dashboard
+- Rate limiting
+- JWT authentication
+- User accounts
+
+---
+
+# 👨‍💻 Author
+
+## Atharva Pachpute
+
+🎓 BE Information Technology (SPPU)  
+💻 Full Stack Developer  
+📍 Pune, India
+
+---
+
+# Connect With Me
+
+- GitHub: https://github.com/SyntaxNova
+- LinkedIn: https://www.linkedin.com/in/atharva-pachpute3/
+- Email: atharvacodes@gmail.com
+
+---
+
+# ⭐ If you liked this project
+
+Give it a star on GitHub ⭐
