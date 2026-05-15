@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import java.net.URI;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/")
 public class UrlController {
 
